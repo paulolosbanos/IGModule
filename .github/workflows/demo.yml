@@ -26,5 +26,5 @@ jobs:
       run: gradle build
     
     - name: Publish Artifacts
-      run: gradle publish
+      run: ./gradlew publish
         
