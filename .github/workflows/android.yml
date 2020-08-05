@@ -19,7 +19,7 @@ jobs:
         java-version: 1.8
     
     - name: Build with Gradle
-      run: ./gradlew assembleDebug --stacktrace
+      run: ./gradlew build --stacktrace
 
     - name: Publish Artifact
       run: ls app/build/outputs
