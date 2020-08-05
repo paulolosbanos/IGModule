@@ -25,9 +25,12 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Build Artifacts
       run: gradle build
-    
+      
+    - name: Echo
+      run: echo $buildDir
+      
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: IGModule-release
-        path: $buildDir/outputs/aar/IGModule-release.aar
+        path: /home/runner/work/IGModule/IGModule/igmodule/build/outputs/aar/IGModule-release.aar
