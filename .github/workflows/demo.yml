@@ -24,7 +24,10 @@ jobs:
         java-version: 1.8
     # Runs a set of commands using the runners shell
     - name: Build Artifacts
-      run: |
-       gradle build
-       gradle publish
-        
+      run: gradle build
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: IGModule-release
+        path: $buildDir/outputs/aar/IGModule-release.aar
