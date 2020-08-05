@@ -23,14 +23,14 @@ publishing {
             groupId 'com.atlas.igmodule'
             artifactId getArtificatId()
             version getVersionName()
-            artifact("igmodule/build/outputs/aar/${getArtificatId()}-release.aar")
+            artifact("/igmodule/build/outputs/aar/${getArtificatId()}-release.aar")
         }
 
         debug(MavenPublication) {
             groupId 'com.atlas.igmodule'
             artifactId "IGModule-Debug"
             version "1.0.0"
-            artifact("igmodule/build/outputs/aar/${getArtificatId()}-debug.aar")
+            artifact("/igmodule/build/outputs/aar/${getArtificatId()}-debug.aar")
         }
     }
 
