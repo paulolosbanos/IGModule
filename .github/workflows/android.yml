@@ -19,5 +19,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build --stacktrace
 
-    - name: Publish Artifact
-      run: ls igmodule/build/outputs/aar
+    - name: Publish Artifacts
+      run: gradle publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
