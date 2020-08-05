@@ -4,7 +4,10 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven-publish'
 
 def githubProperties = new Properties()
-githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+
+if( rootProject.file("github.properties").exists() ) {
+    githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+}
 
 def getVersionName = { ->
     return "1.0.3"
