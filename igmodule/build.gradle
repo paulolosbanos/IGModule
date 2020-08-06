@@ -24,7 +24,7 @@ publishing {
         }
 
         debug(MavenPublication) {
-            groupId getGroupid()
+            groupId getGroupId()
             artifactId "${getArtifactId()}-debug"
             version getDebugVersionNumber()
             artifact("build/outputs/aar/${getArtifactId()}-debug.aar")
