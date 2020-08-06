@@ -1,4 +1,4 @@
-name: Android CI
+name: Cloud Module Debug Workflow
 
 on:
   workflow_dispatch:
@@ -18,12 +18,6 @@ jobs:
     - name: Build Debug Artifact
       run: ./gradlew assembleDebug
   
-  publish:
-    
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2   
     - name: Publish Debug Artifact
       run: ./gradlew publishDebugPublicationToGitHubPackagesRepository
       env:
