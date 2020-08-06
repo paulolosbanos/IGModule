@@ -15,10 +15,16 @@ jobs:
       with:
         java-version: 1.8
     
-    - name: Build with Gradle
-      run: ./gradlew build --stacktrace
+    - name: Build Debug Artifact
+      run: ./gradlew assembleDebug
   
-    - name: Publish Artifacts
-      run: ./gradlew publish debug
+  publish:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2   
+    - name: Publish Debug Artifact
+      run: ./gradlew publishDebugPublicationToGitHubPackagesRepository
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
