@@ -9,24 +9,25 @@ if( rootProject.file("github.properties").exists() ) {
     githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 }
 
-def getVersionName = { -> return "1.0.4" }
-
-def getArtificatId = { -> return "igmodule" }
+def getDebugVersionNumber = { -> return "1.0.5" }
+def getReleaseVersionNumber = { -> return "1.0.2" }
+def getGroupId = { -> return "com.atlas.igmodule" }
+def getArtifactId = { -> return "igmodule" }
 
 publishing {
     publications {
         release(MavenPublication) {
-            groupId 'com.atlas.igmodule'
-            artifactId getArtificatId()
-            version getVersionName()
-            artifact("build/outputs/aar/${getArtificatId()}-release.aar")
+            groupId getGroupId()
+            artifactId getArtifactId()
+            version getReleaseVersionNumber()
+            artifact("build/outputs/aar/${getArtifactId()}-release.aar")
         }
 
         debug(MavenPublication) {
-            groupId 'com.atlas.igmodule'
-            artifactId "IGModule-Debug"
-            version "1.0.0"
-            artifact("build/outputs/aar/${getArtificatId()}-debug.aar")
+            groupId getGroupid()
+            artifactId "${getArtifactId()}-debug"
+            version getDebugVersionNumber()
+            artifact("build/outputs/aar/${getArtifactId()}-debug.aar")
         }
     }
     
