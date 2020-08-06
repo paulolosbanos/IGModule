@@ -9,9 +9,9 @@ if( rootProject.file("github.properties").exists() ) {
     githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 }
 
-def getVersionName = { -> return "1.0.3" }
+def getVersionName = { -> return "1.0.4" }
 
-def getArtificatId = { -> return "IGModule" }
+def getArtificatId = { -> return "igmodule" }
 
 publishing {
     publications {
