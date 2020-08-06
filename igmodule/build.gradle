@@ -14,17 +14,18 @@ def releaseVersionNumber = { -> return "1.0.4" }
 
 def artifactId = { -> return "igmodule" }
 def groupId = { -> return "com.atlas.igmodule" }
+
 publishing {
     publications {
         release(MavenPublication) {
-            groupId "com.atlas.igmodule"
+            groupId 'com.atlas.igmodule'
             artifactId artifactId()
             version releaseVersionNumber()
             artifact("build/outputs/aar/${getArtificatId()}-release.aar")
         }
 
         debug(MavenPublication) {
-            groupId "com.atlas.igmodule"
+            groupId 'com.atlas.igmodule'
             artifactId artifactId() + "-Debug"
             version debugVersionNumber()
             artifact("build/outputs/aar/${getArtificatId()}-debug.aar")
