@@ -9,25 +9,25 @@ if( rootProject.file("github.properties").exists() ) {
     githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 }
 
-def debugVersionNumber = "1.0.1"
-def releaseVersionNumber = "1.0.4"
+ext.debugVersionNumber = "1.0.1"
+ext.releaseVersionNumber = "1.0.4"
 
-def artifactId = "igmodule"
-def groupId = "com.atlas.igmodule" 
+ext.artifactId = "igmodule"
+ext.groupId = "com.atlas.igmodule" 
 
 publishing {
     publications {
         release(MavenPublication) {
-            groupId ${groupId}
-            artifactId ${artifactId}
-            version ${releaseVersionNumber}
+            groupId $groupId
+            artifactId $artifactId
+            version $releaseVersionNumber
             artifact("build/outputs/aar/${artifactId}-release.aar")
         }
 
         debug(MavenPublication) {
-            groupId ${groupId}
+            groupId $groupId
             artifactId "${artifactId}-debug"
-            version ${debugVersionNumber}
+            version $debugVersionNumber
             artifact("build/outputs/aar/${artifactId}-debug.aar")
         }
     }
