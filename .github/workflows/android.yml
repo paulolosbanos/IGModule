@@ -17,6 +17,9 @@ jobs:
     
     - name: Build with Gradle
       run: ./gradlew build --stacktrace
+    
+    - name: echo
+      run: echo $buildDir
 
     - name: Publish Artifacts
       run: ./gradlew publish
