@@ -19,8 +19,9 @@ jobs:
       run: ./gradlew build --stacktrace
     
     - name: echo
-      run: echo $PWD
-
+      run: |
+          ls /home/runner/work/IGModule/IGModule/igmodule/build/outputs/aar/
+          ls $PWD/igmodule/build/outputs/aar/
     - name: Publish Artifacts
       run: ./gradlew publish
       env:
