@@ -16,9 +16,9 @@ jobs:
         java-version: 1.8
     
     - name: Build Debug Artifact
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleRelease
   
     - name: Publish Debug Artifact
-      run: ./gradlew publishDebugPublicationToGitHubPackagesRepository
+      run: ./gradlew publishReleasePublicationToGitHubPackagesRepository
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
